@@ -9,7 +9,7 @@
     }
 
     function goToUser() {
-        goto('/adduser');
+        goto('/');
     }
 
 </script>

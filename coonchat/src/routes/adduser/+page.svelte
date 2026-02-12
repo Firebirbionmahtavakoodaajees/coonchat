@@ -27,19 +27,26 @@
 </script>
 
 <div class="center-cardbox-container">
-    <button class="center-cardbox" title="Center button" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
-    </button>
+    <div class="card-carousel" style="transform: translateX({-currentIndex * 220}px)">
+        <button class="center-cardbox"
+                title="Center button"
+                on:touchstart={handleTouchStart}
+                on:touchend={handleTouchEnd}>
+        </button>
+    </div>
+
 
     <div class="carousel-dots">
         {#each [0,1,2] as i}
             <span class="dot" class:active={i === currentIndex} role="button" tabindex="0" on:click={() => currentIndex = i} on:keydown={(e) => e.key === 'Enter' && (currentIndex = i)}>
-
             </span>
         {/each}
     </div>
 </div>
 
 <style>
+
+/* Card */
 .center-cardbox-container {
     display: flex;
     flex-direction: column;
@@ -56,11 +63,24 @@
     background: black;
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    flex-shrink: 0;
+    margin: 0 10px;
+    backdrop-filter: blur(10px);
 }
 .center-cardbox:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
+
+/*Carrousel*/
+.card-carousel {
+    display: flex;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); /* iOS feel */
+}
+
+/* Dots */
 
 .carousel-dots {
     display: flex;
