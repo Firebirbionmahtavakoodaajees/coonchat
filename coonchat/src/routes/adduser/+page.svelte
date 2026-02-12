@@ -28,7 +28,7 @@
 
 <div class="center-cardbox-container">
     <div class="card-viewport">
-        <div class="card-carousel" style="transform: translateX({-currentIndex * 200}px)">
+        <div class="card-carousel" style="transform: translateX({-currentIndex * 240}px)">
             {#each [0,1,2] as _}
                 <button class="center-cardbox"
                         title="Carrousel"
