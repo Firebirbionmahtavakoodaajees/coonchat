@@ -1,13 +1,18 @@
 <script>
+    import {goto} from "$app/navigation";
+
+    function goCoon() {
+        goto('/');
+    }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
 <div class="background">
     <div class="main">
-        <div class="logo">coonchat</div>
+        <button class="logo" on:click={goCoon}>coonchat</button>
         <slot />
     </div>
 </div>
@@ -35,6 +40,11 @@
         font-style: normal;
         font-size: 18px;
         margin: 10px 40px;
+        background: black;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
     }
 
     .main {
