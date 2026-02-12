@@ -19,7 +19,7 @@
 </div>
 
 <div class="content-shell">
-    <button class="contact" on:click={goToUser()}>
+    <button class="contact" on:click={goToUser}>
         {user1}
     </button>
 </div>
