@@ -27,12 +27,16 @@
 </script>
 
 <div class="center-cardbox-container">
-    <div class="card-carousel" style="transform: translateX({-currentIndex * 220}px)">
-        <button class="center-cardbox"
-                title="Center button"
-                on:touchstart={handleTouchStart}
-                on:touchend={handleTouchEnd}>
-        </button>
+    <div class="card-viewport">
+        <div class="card-carousel" style="transform: translateX({-currentIndex * 220}px)">
+            {#each [0,1,2] as _}
+                <button class="center-cardbox"
+                        title="Carrousel"
+                        on:touchstart={handleTouchStart}
+                        on:touchend={handleTouchEnd}>
+                </button>
+            {/each}
+        </div>
     </div>
 
 
@@ -74,11 +78,24 @@
 }
 
 /*Carrousel*/
+.card-viewport {
+    width: 220px;
+    overflow-x: clip;
+    overflow-y: visible;
+    padding: 12px 0;
+}
+
 .card-carousel {
     display: flex;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); /* iOS feel */
 }
+
+.center-cardbox {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
 
 /* Dots */
 
