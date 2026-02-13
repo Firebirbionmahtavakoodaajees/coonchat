@@ -17,34 +17,67 @@
     function handleSwipe() {
         const diff = touchstartX - touchendX;
         if (Math.abs(diff) < 50) return;
+
+        const maxIndex = document.querySelectorAll('.center-cardbox').length - 1;
+
         if (diff > 0) {
-            const maxIndex = 2;
             currentIndex = Math.min(currentIndex + 1, maxIndex);
         } else {
             currentIndex = Math.max(currentIndex - 1, 0);
         }
     }
+
+
 </script>
 
 <div class="center-cardbox-container">
     <div class="card-viewport">
-        <div class="card-carousel" style="transform: translateX({-currentIndex * 225}px)">
-            {#each [0,1,2] as _}
-                <button class="center-cardbox"
-                        title="Carrousel"
-                        on:touchstart={handleTouchStart}
-                        on:touchend={handleTouchEnd}>
-                </button>
-            {/each}
+        <div class="card-carousel" style="transform: translateX({-currentIndex * 230}px);">
+            <button class="center-cardbox"
+                    title="Card 1"
+                    on:touchstart={handleTouchStart}
+                    on:touchend={handleTouchEnd}>
+
+            </button>
+
+            <button class="center-cardbox"
+                    title="Card 2"
+                    on:touchstart={handleTouchStart}
+                    on:touchend={handleTouchEnd}>
+
+            </button>
+
+            <button class="center-cardbox"
+                    title="Card 3"
+                    on:touchstart={handleTouchStart}
+                    on:touchend={handleTouchEnd}>
+
+            </button>
+
+            <button class="center-cardbox"
+                    title="Card 3"
+                    on:touchstart={handleTouchStart}
+                    on:touchend={handleTouchEnd}>
+
+            </button>
+
+            <button class="center-cardbox"
+                    title="Card 3"
+                    on:touchstart={handleTouchStart}
+                    on:touchend={handleTouchEnd}>
+
+            </button>
+
         </div>
     </div>
 
 
     <div class="carousel-dots">
-        {#each [0,1,2] as i}
-            <span class="dot" class:active={i === currentIndex} role="button" tabindex="0" on:click={() => currentIndex = i} on:keydown={(e) => e.key === 'Enter' && (currentIndex = i)}>
-            </span>
-        {/each}
+        <span class="dot" class:active={0 === currentIndex} on:click={() => currentIndex = 0}></span>
+        <span class="dot" class:active={1 === currentIndex} on:click={() => currentIndex = 1}></span>
+        <span class="dot" class:active={2 === currentIndex} on:click={() => currentIndex = 2}></span>
+        <span class="dot" class:active={3 === currentIndex} on:click={() => currentIndex = 3}></span>
+        <span class="dot" class:active={4 === currentIndex} on:click={() => currentIndex = 4}></span>
     </div>
 </div>
 
@@ -124,5 +157,9 @@
 .dot:hover {
     background: rgba(255,255,255,0.8);
     transform: scale(1.2);
+}
+
+/*Desktop*/
+@media (max-width: 600px) {
 }
 </style>

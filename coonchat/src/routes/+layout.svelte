@@ -39,7 +39,7 @@
         font-weight: 500;
         font-style: normal;
         font-size: 18px;
-        margin: 10px 40px;
+        margin: 15px 10dvw;
         background: black;
         border: none;
         padding: 0;
