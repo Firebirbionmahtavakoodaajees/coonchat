@@ -1,5 +1,7 @@
 <script>
     //Variables
+    import {goto} from "$app/navigation";
+
     let currentIndex = 0;
     let touchstartX = 0;
     let touchendX = 0;
@@ -9,6 +11,11 @@
     let lastTime = 0;
 
     //Functions
+    function addSharedNote() { goto('/addsharednote'); }
+    function addNote() { goto('/addnote'); }
+    function addUser() { goto('/addwhom'); }
+    function addAi() { goto('/addai'); }
+    function addDisappearing() { goto('/adddisappearing'); }
 
     /** @param {TouchEvent} e */
     function handleTouchStart(e) {
@@ -16,7 +23,6 @@
         lastTouchX = touchstartX;
         lastTime = Date.now();
     }
-
 
     /** @param {TouchEvent} e */
     function handleTouchEnd(e) {
@@ -46,8 +52,6 @@
         currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
     }
 
-
-
     //Logic
 
 </script>
@@ -56,43 +60,48 @@
     <div class="card-viewport">
         <div class="card-carousel" style="transform: translateX({-currentIndex * 230}px)">
             <button class="center-cardbox" class:active-card={currentIndex === 0}
-                    title="Card 1"
+                    title="Add a Shared Note!"
                     on:touchstart={handleTouchStart}
-                    on:touchend={handleTouchEnd}>
+                    on:touchend={handleTouchEnd}
+                    on:click={addSharedNote}>
 
-                I
+                Shared Note
             </button>
 
             <button class="center-cardbox" class:active-card={currentIndex === 1}
                     title="Card 2"
                     on:touchstart={handleTouchStart}
-                    on:touchend={handleTouchEnd}>
+                    on:touchend={handleTouchEnd}
+                    on:click={addNote}>
 
-                Love
+                Note
             </button>
 
             <button class="center-cardbox" class:active-card={currentIndex === 2}
                     title="Card 3"
                     on:touchstart={handleTouchStart}
-                    on:touchend={handleTouchEnd}>
+                    on:touchend={handleTouchEnd}
+                    on:click={addUser}>
 
-                You
+                User
             </button>
 
             <button class="center-cardbox" class:active-card={currentIndex === 3}
                     title="Card 4"
                     on:touchstart={handleTouchStart}
-                    on:touchend={handleTouchEnd}>
+                    on:touchend={handleTouchEnd}
+                    on:click={addAi}>
 
-                Babygirl
+                AI
             </button>
 
             <button class="center-cardbox" class:active-card={currentIndex === 4}
                     title="Card 5"
                     on:touchstart={handleTouchStart}
-                    on:touchend={handleTouchEnd}>
+                    on:touchend={handleTouchEnd}
+                    on:click={addDisappearing}>
 
-                ❤️
+                Disappearing
             </button>
 
         </div>
@@ -171,6 +180,11 @@
     flex-shrink: 0;
     margin: 0 10px;
     backdrop-filter: blur(10px);
+
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
 }
 .center-cardbox:hover {
     transform: scale(1.05);
