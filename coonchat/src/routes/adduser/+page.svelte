@@ -36,9 +36,9 @@
 
         const speed = Math.abs(velocity);
         let step = 1;
-        if (speed > 1) step = 2;
-        if (speed > 2) step = 3;
-        if (speed > 2.5) step = 5;
+        if (speed > 1.5) step = 2;
+        if (speed > 1.75) step = 3;
+        if (speed > 2) step = 5;
 
         if (diff > 0) currentIndex += step;
         else currentIndex -= step;
