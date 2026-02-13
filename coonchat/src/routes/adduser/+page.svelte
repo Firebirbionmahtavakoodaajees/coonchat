@@ -38,6 +38,7 @@
                     on:touchstart={handleTouchStart}
                     on:touchend={handleTouchEnd}>
 
+                I
             </button>
 
             <button class="center-cardbox"
@@ -45,6 +46,7 @@
                     on:touchstart={handleTouchStart}
                     on:touchend={handleTouchEnd}>
 
+                Love
             </button>
 
             <button class="center-cardbox"
@@ -52,6 +54,7 @@
                     on:touchstart={handleTouchStart}
                     on:touchend={handleTouchEnd}>
 
+                You
             </button>
 
             <button class="center-cardbox"
@@ -59,6 +62,7 @@
                     on:touchstart={handleTouchStart}
                     on:touchend={handleTouchEnd}>
 
+                Babygirl
             </button>
 
             <button class="center-cardbox"
@@ -66,6 +70,7 @@
                     on:touchstart={handleTouchStart}
                     on:touchend={handleTouchEnd}>
 
+                ❤️
             </button>
 
         </div>
