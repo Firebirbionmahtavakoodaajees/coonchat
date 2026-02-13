@@ -34,11 +34,11 @@
 
         const maxIndex = document.querySelectorAll('.center-cardbox').length - 1;
 
-        // Momentum: fast flick skips cards
         const speed = Math.abs(velocity);
         let step = 1;
-        if (speed > 0.5) step = 2;
-        if (speed > 1) step = 3;
+        if (speed > 1) step = 2;
+        if (speed > 2) step = 3;
+        if (speed > 2.5) step = 5;
 
         if (diff > 0) currentIndex += step;
         else currentIndex -= step;
