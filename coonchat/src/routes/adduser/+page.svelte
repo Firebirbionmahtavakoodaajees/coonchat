@@ -73,11 +73,51 @@
 
 
     <div class="carousel-dots">
-        <span class="dot" class:active={0 === currentIndex} on:click={() => currentIndex = 0}></span>
-        <span class="dot" class:active={1 === currentIndex} on:click={() => currentIndex = 1}></span>
-        <span class="dot" class:active={2 === currentIndex} on:click={() => currentIndex = 2}></span>
-        <span class="dot" class:active={3 === currentIndex} on:click={() => currentIndex = 3}></span>
-        <span class="dot" class:active={4 === currentIndex} on:click={() => currentIndex = 4}></span>
+        <span
+                class="dot"
+                class:active={0 === currentIndex}
+                role="button"
+                tabindex="0"
+                on:click={() => currentIndex = 0}
+                on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (currentIndex = 0)}>
+        </span>
+
+        <span
+                class="dot"
+                class:active={1 === currentIndex}
+                role="button"
+                tabindex="0"
+                on:click={() => currentIndex = 1}
+                on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (currentIndex = 0)}>
+        </span>
+
+        <span
+                class="dot"
+                class:active={2 === currentIndex}
+                role="button"
+                tabindex="0"
+                on:click={() => currentIndex = 2}
+                on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (currentIndex = 0)}>
+        </span>
+
+        <span
+                class="dot"
+                class:active={3 === currentIndex}
+                role="button"
+                tabindex="0"
+                on:click={() => currentIndex = 3}
+                on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (currentIndex = 0)}>
+        </span>
+
+        <span
+                class="dot"
+                class:active={4 === currentIndex}
+                role="button"
+                tabindex="0"
+                on:click={() => currentIndex = 4}
+                on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (currentIndex = 0)}>
+        </span>
+
     </div>
 </div>
 
