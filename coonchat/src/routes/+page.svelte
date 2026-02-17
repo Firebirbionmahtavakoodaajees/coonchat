@@ -1,7 +1,17 @@
 <script>
     import {goto} from "$app/navigation";
+    import { createClient } from '@supabase/supabase-js'
 
-    let user = "User 0"
+    const supabaseUrl = "https://dprudkvkotavzhieovfx.supabase.co"
+    const supabaseKey = "sb_publishable_WGmi5uPdwEs8UwsNBrUNpQ_9SZb3W0d"
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    let user = "loading..."
+
+    supabase.auth.getUser().then(({ data }) => {
+        user = data.user?.email?.split("@")[0] ?? "go log in"
+    })
+
     let user1 = "User 1"
 
     function addUserButton() {
