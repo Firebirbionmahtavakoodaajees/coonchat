@@ -13,7 +13,7 @@
     async function login() {
         const email = username.trim().toLowerCase() + "@coonchat.local"
 
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
             email,
             password
         })
@@ -21,7 +21,7 @@
         if (error) {
             alert("login failed")
         } else {
-            alert("Welcome," + data.user + "!")
+            alert("Welcome," + username + "!")
         }
     }
 </script>
